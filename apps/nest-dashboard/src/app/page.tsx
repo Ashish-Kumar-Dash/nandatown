@@ -7,6 +7,12 @@ export const metadata = {
 
 const REPO_URL = 'https://github.com/projnanda/nandatown';
 
+const PROJECT_LINKS = [
+  { label: 'projectnanda.org', href: 'https://projectnanda.org' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/projectnanda/' },
+  { label: 'Substack', href: 'https://projectnanda.substack.com' },
+];
+
 const LAYERS = [
   'Transport',
   'Communication',
@@ -83,6 +89,17 @@ export default async function Home() {
                 >
                   nanda.town &rarr;
                 </a>
+                {PROJECT_LINKS.map(({ label, href }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary"
+                  >
+                    {label} &rarr;
+                  </a>
+                ))}
               </div>
               <div className="mt-10 grid grid-cols-2 gap-6 border-t border-cream-400/70 pt-6">
                 {prTotal !== null && (
